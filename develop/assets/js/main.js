@@ -16,12 +16,4 @@ $( document ).ready(function() {
 	 
 	  }
 	});
-
-	nabarlink.on('click',function(e){
-		e.preventDefault();
-		const to = $(this).attr('href');
-		$('html, body').animate({
-	        scrollTop: $(to).offset().top
-	    }, 1000);
-	})
 });
