@@ -8,6 +8,12 @@ class Event extends CI_Model{
   {
     parent::__construct();
   }
+  public function hit($id = "")
+  {
+    $cLama = $this->db->select("hit")->where("id_event",$id)->get("event");
+    $cLama =  $cLama->row()->hit;
+    $this->db->update($this->table,array("hit"=>($cLama + 1)),array("id_event"=>$id));
+  }
   public function detail($id="")
   {
     if($id != ""){
